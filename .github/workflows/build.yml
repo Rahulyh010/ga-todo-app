@@ -10,11 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: action/checkout@v3
-      - name: action/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-        node-version: "16"
+          node-version: "16"
       - name: Install Dependencies
         run: npm ci
       - name: Build Project
